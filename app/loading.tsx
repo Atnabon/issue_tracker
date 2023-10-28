@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Loading = () => {
+const loading = () => {
   return (
-    <span className="loading loading-spinner loading-md"></span>
+    <div>loading</div>
   )
 }
 
-export default Loading
+export default loading
