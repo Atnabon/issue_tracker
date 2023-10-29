@@ -1,15 +1,16 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter, Roboto } from 'next/font/google'
+import { Inter} from 'next/font/google'
 import Navbar from './Navbar';
 import "@radix-ui/themes/styles.css"
 import {Theme} from "@radix-ui/themes"
+import "./theme-config.css"
 
-const roboto = Roboto({
-  subsets: ['latin'],
-  weight: ['400', '500']
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
-
 
 
 export const metadata: Metadata = {
@@ -29,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="winter">
       <body>
-        <Theme>
+        <Theme accentColor="blue"> 
         <Navbar/>
           <main className='p-5'>
             {children}
