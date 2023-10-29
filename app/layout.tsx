@@ -2,7 +2,8 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Roboto } from 'next/font/google'
 import Navbar from './Navbar';
-
+import "@radix-ui/themes/styles.css"
+import {Theme} from "@radix-ui/themes"
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -28,10 +29,12 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="winter">
       <body>
-          <Navbar/>
+        <Theme>
+        <Navbar/>
           <main className='p-5'>
             {children}
           </main>
+        </Theme>
       </body>
     </html>
   )
