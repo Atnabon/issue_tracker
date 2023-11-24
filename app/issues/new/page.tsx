@@ -7,6 +7,8 @@ import "easymde/dist/easymde.min.css";
 import SimpleMDE from "react-simplemde-editor";
 import axios from 'axios'
 import { useRouter } from 'next/navigation';
+import {zodResolver} from '@hookform/resolvers/zod';
+import { createIssueSchema } from '@/app/validationSchema';
 
 
 interface IssueForm{
@@ -16,7 +18,7 @@ interface IssueForm{
 
 
 const NewIssuePage = () => {
-    const {register,handleSubmit,control}=useForm<IssueForm>();
+    const {register,handleSubmit,control}=useForm<IssueForm>({resolver:zodResolver(createIssueSchema)});
     const router=useRouter();
     const [error,setError]=useState("")
   return (
